@@ -15,12 +15,30 @@ alias remote="ssh root@fladam.org"
 alias ls="exa -l --color=always --group-directories-first"
 alias la="exa -la --color=always --group-directories-first"
 
+alias gc="cd ~/.config"
+alias gd="cd ~/dev"
+alias gf="cd ~/.dotfiles"
+alias gD="cd ~/downloads"
+alias go="cd ~/org"
+alias gp="cd ~/pictures"
+alias gv="cd ~/videos"
+alias gm="cd ~/music"
+alias gs="cd ~/.local/src"
+alias gS="cd ~/.local/share"
+alias gb="cd ~/.local/bin"
+alias gM="cd /mnt"
+alias gr="cd /"
+
 alias reloademacs="killall emacs;emacs --daemon"
 
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+
+alias mkd="mkdir -pv"
+alias ffmpeg="ffmpeg -hide_banner"
+alias yta="yt-dlp -x -f bestaudio"
 
 # easier to read disk
 alias df='df -h'     # human-readable sizes
