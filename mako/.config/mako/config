@@ -1,0 +1,23 @@
+# general
+default-timeout=5000
+
+# style
+text-color=#D5C4A1
+background-color=#1D2021
+border-color=#D5C4A1
+default-timeout=8000
+font=JetBrainsMono Nerd Font Mono 10
+border-radius=5
+border-size=2
+width=300
+padding=18
+outer-margin=10,10,0,0
+
+# [urgency=high]
+# border-color=#4f6580
+# default-timeout=0
+# border-size=5
+# layer=overlay
+
+# [mode=dnd]
+# invisible=1

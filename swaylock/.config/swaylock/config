@@ -1,0 +1,21 @@
+image=/tmp/wallpaper.jpg
+color=000000
+scaling=fill
+hide-keyboard-layout
+show-failed-attempts
+font=JetBrainsMono Nerd Font Mono
+font-size=15
+bs-hl-color=bf616a
+key-hl-color=d8dee9
+text-clear-color=eceff4
+ring-color=4c566a
+ring-clear-color=b48ead
+ring-wrong-color=bf616a
+inside-wrong-color=000000aa
+text-wrong-color=bf616a
+text-ver-color=eceff4
+text-caps-lock-color=bf616a
+inside-clear-color=000000aa
+inside-color=000000aa
+ring-ver-color=5e81ac
+inside-ver-color=000000aa

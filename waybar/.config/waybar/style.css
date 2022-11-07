@@ -1,0 +1,38 @@
+#waybar {
+            background: transparent;
+          }
+          #workspaces, #workspaces button, #battery, #bluetooth, #network, #clock, #clock.time, #custom-mpd, #custom-updates, #pulseaudio, #idle_inhibitor, #custom-bluetooth, #tray, #custom-power {
+            font-family: "JetBrainsMono Nerd Font Mono", "Material Design Icons";
+            font-weight: bolder;
+            color: #c6b695;
+            background-color: #282828;
+            border-radius: 0;
+            transition: none;
+            padding: 0 16px 0 16px;
+          }
+          #custom-power, #clock.time, #workspaces button.active {
+            background-color: #c6b695;
+            color: #282828;
+            border-radius: 0 12px 12px 0;
+          }
+          #tray {
+            padding-right: 1rem;
+          }
+          #custom-power {
+            background-color: #fb4934;
+          }
+          #clock, #network {
+            border-radius: 12px 0 0 12px;
+          }
+          #workspaces, #workspaces button {
+            padding: 0 4px 0 4px;
+            border-radius: 12px;
+          }
+          #workspaces button.active, #workspaces button:hover {
+            border-radius: 50%;
+            padding: 0 4px;
+            margin: 4px 0 4px 0;
+          }
+          #network.disconnected {
+            color: #4a4a4a;
+          }

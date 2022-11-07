@@ -1,0 +1,33 @@
+#!/bin/sh
+# get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# common commands
+alias p="pacman"
+alias v="vim"
+alias ka="killall"
+alias kys="poweroff"
+alias py="python"
+alias remote="ssh root@fladam.org"
+alias ls="exa -l --color=always --group-directories-first"
+alias la="exa -la --color=always --group-directories-first"
+
+alias reloademacs="killall emacs;emacs --daemon"
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+# easier to read disk
+alias df='df -h'     # human-readable sizes
+alias du='du -h'     # human-readable sizes
+alias free='free -m' # show sizes in MB
+
+# remove need to type sudo
+for cmd in pacman rc-update rc-service reboot poweroff mount umount; do
+	alias $cmd="sudo $cmd";
+done; unset cmd

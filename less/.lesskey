@@ -1,0 +1,3 @@
+#env
+LESS=-iRj.5
+LESSHISTFILE=/dev/null

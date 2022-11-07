@@ -1,0 +1,20 @@
+#!/bin/sh
+
+cd ~
+
+export EDITOR="vim"
+export TERMINAL="wezterm"
+export BROWSER="librewolf"
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export ZDOTDIR=$HOME/.config/zsh
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XCURSOR_SIZE=24
+export LIBSEAT_BACKEND="logind"
+export ANKI_WAYLAND=1
+
+exec dbus-launch --sh-syntax --exit-with-session Hyprland

@@ -1,0 +1,125 @@
+{
+  "position": "top",
+  "layer": "top", // prevent tray context menus from being behind hyprland windows
+  "margin": "8 8 0 8",
+  "modules-left": [
+    "wlr/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "clock#time"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "custom/mpd",
+    "custom/updates",
+    "idle_inhibitor",
+    "tray",
+    "custom/power"
+  ],
+  "clock": {
+    "format": "{:%a, %d %b %Y}",
+    "interval": 3600
+  },
+  "clock#time": {
+    "format": "{:%H:%M}",
+    "interval": 60
+  },
+//  "custom/spotify": {
+//      "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+//      "format": "{} hej󰓇",
+//      "return-type": "json",
+//      "on-click": "playerctl play-pause",
+//      "on-scroll-up": "playerctl next",
+//      "on-scroll-down": "playerctl previous"
+//  },
+  "custom/updates": {
+    "exec": "~/.config/waybar/scripts/checkupdates.sh",
+    "exec-if": "checkupdates > /dev/null", // cp mongo
+    "interval": 60,
+    "format": "󰇚 {}"
+  },
+  "network": {
+      "interface": "wlan*",
+      "format": "{ifname}",
+      "format-wifi": "{icon} {essid}",
+      "format-icons": [
+        "󰤨",
+        "󰤥",
+        "󰤢",
+        "󰤟"
+      ],
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "", //An empty format will hide the module.
+      "tooltip": false
+  },
+  "custom/mpd": {
+    "exec": "~/.config/waybar/scripts/mpd-scrolling.sh",
+    "exec-if": "mpc current | grep . > /dev/null",
+    "on-click": "mpc toggle",
+    "on-click-right": "mpc stop",
+    "format": "󰝚 {}",
+    "format-paused": "󰏥 {}"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "<span color=\"#4a4a4a\">󰸈</span>",
+    "format-icons": [
+      "󰕿",
+      "󰖀",
+      "󰖀",
+      "󰖀",
+      "󰖀",
+      "󰕾"
+    ],
+    "on-click": "pamixer -t",
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "󰈈", // open eye
+          "deactivated": "󰈉" // closed eye
+      }
+  },
+  "tray": {
+    "icon-size": 21,
+    //"spacing": 10
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": false
+  },
+  "custom/power": {
+    "format": "󰌧",
+    "on-click": "rofi -show drun",
+    "tooltip": false
+  },
+  "wlr/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    }
+  }
+}

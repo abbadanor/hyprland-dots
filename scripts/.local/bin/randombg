@@ -1,0 +1,12 @@
+#!/bin/sh
+
+find $HOME/pictures/gruvbox/ -type f | shuf -n1 | xargs -I{} cp -f {} /tmp/wallpaper.jpg
+
+if pgrep swaybg
+then
+    PID=`pidof swaybg`
+    kill $PID
+    xargs swaybg -m fill -i /tmp/wallpaper.jpg &
+else
+    xargs swaybg -m fill -i /tmp/wallpaper.jpg &
+fi
