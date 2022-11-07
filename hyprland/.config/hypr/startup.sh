@@ -10,6 +10,10 @@ gsettings set org.gnome.desktop.interface cursor-theme 'capitaine-cursors'
 # policy kit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 > /tmp/polkit-gnome-log 2>&1 &
 
+# TODO: add gnome keyring for nextcloud
+# eval $(gnome-keyring-daemon --start)
+# export SSH_AUTH_SOCK
+
 # update user dirs (~/downloads, ~/pictures, ~/documents etc.)
 xdg-user-dirs-update
 
@@ -33,6 +37,9 @@ until pactl info > /dev/null 2>&1; do sleep 1; done
 waybar > /tmp/waybar-log 2>&1 &
 
 wezterm-mux-server --daemonize -- zsh
+
+# TODO: add nextcloud
+# nextcloud &
 
 # launch emacs daemon
 emacs --daemon
