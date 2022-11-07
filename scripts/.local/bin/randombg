@@ -1,6 +1,6 @@
 #!/bin/sh
 
-find $HOME/pictures/gruvbox/ -type f | shuf -n1 | xargs -I{} cp -f {} /tmp/wallpaper.jpg
+find $HOME/pictures/gruvbox/ -type f | shuf -n1 | xargs -I{} cp -fL {} /tmp/wallpaper.jpg
 
 if pgrep swaybg
 then
