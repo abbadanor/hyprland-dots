@@ -46,6 +46,7 @@ zsh_add_plugin "joshskidmore/zsh-fzf-history-search"
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
+# TODO: lägg till så att <C-Backspace> tar bort föregående ord, <C-Left> åt vänster etc..
 # Key-bindings
 bindkey -s '^o' 'ranger^M'
 # bindkey '^[[P' delete-char
