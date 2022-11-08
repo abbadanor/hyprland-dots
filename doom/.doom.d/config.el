@@ -61,3 +61,8 @@
 
 ;; TODO: wall ah h
 (map! :leader :desc "Run wezterm" "t t" #'open-terminal)
+
+
+(map! :leader :desc "Comment line" "TAB TAB" #'comment-line)
+
+(evil-define-key '(normal visual visual-line) web-mode-map (kbd "g%") 'web-mode-navigate)
