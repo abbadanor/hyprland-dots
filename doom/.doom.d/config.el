@@ -9,6 +9,12 @@
 (setq user-full-name "Adam Nord"
       user-mail-address "adam.nord04@gmail.com")
 
+(beacon-mode 1)
+
+(setq projectile-enable-caching nil)
+
+(run-at-time nil (* 5 60) 'recentf-save-list)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
