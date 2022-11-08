@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 
-PATH=$PATH:/home/adam/.local/bin
+export PATH="$HOME/.local/bin/:$HOME/.emacs.d/bin/:$PATH"
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
