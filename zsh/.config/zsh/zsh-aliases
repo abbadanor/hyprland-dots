@@ -46,6 +46,6 @@ alias du='du -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
 
 # remove need to type sudo
-for cmd in pacman rc-update rc-service reboot poweroff mount umount; do
+for cmd in pacman rc-update rc-service reboot poweroff mount umount docker; do
 	alias $cmd="sudo $cmd";
 done; unset cmd
