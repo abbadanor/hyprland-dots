@@ -12,6 +12,7 @@
   "modules-right": [
     "network",
     "pulseaudio",
+    "battery",
     "custom/mpd",
     "custom/updates",
     "idle_inhibitor",
@@ -75,6 +76,12 @@
     ],
     "on-click": "pamixer -t",
     "tooltip": false
+  },
+  "battery": {
+      "interval": 60,
+      "format": "{capacity}% {icon}",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "max-length": 25
   },
   "idle_inhibitor": {
       "format": "{icon}",

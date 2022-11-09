@@ -1,7 +1,7 @@
 #waybar {
             background: transparent;
           }
-          #workspaces, #workspaces button, #battery, #bluetooth, #network, #clock, #clock.time, #custom-mpd, #custom-updates, #pulseaudio, #idle_inhibitor, #custom-bluetooth, #tray, #custom-power {
+          #workspaces, #workspaces button, #battery, #bluetooth, #network, #clock, #clock.time, #custom-mpd, #custom-updates, #pulseaudio, #battery, #idle_inhibitor, #custom-bluetooth, #tray, #custom-power {
             font-family: "JetBrainsMono Nerd Font Mono", "Material Design Icons";
             font-weight: bolder;
             color: #c6b695;
