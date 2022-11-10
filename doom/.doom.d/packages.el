@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! beacon)
+(unpin! lsp-mode)
