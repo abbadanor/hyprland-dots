@@ -60,8 +60,7 @@
     "exec-if": "mpc current | grep . > /dev/null",
     "on-click": "mpc toggle",
     "on-click-right": "mpc stop",
-    "format": "󰝚 {}",
-    "format-paused": "󰏥 {}"
+    "format": "{}"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
