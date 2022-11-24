@@ -18,6 +18,13 @@
 
 (run-at-time nil (* 5 60) 'recentf-save-list)
 
+;; Don't ask to delete buffer after deleting file in dired
+(defun my--dired-kill-before-delete (file &rest rest)
+                (when-let ((buf (get-file-buffer file)))
+                  (kill-buffer buf)))
+
+(advice-add 'dired-delete-file :before 'my--dired-kill-before-delete)
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
