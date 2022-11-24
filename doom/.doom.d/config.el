@@ -13,6 +13,9 @@
 
 (setq projectile-enable-caching nil)
 
+;; Move to trash instead of rm:ing
+(setq delete-by-moving-to-trash t)
+
 (run-at-time nil (* 5 60) 'recentf-save-list)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
