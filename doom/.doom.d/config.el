@@ -82,3 +82,65 @@
 (map! :leader :desc "Comment line" "TAB TAB" #'comment-line)
 
 (evil-define-key '(normal visual visual-line) web-mode-map (kbd "g%") 'web-mode-navigate)
+
+;; (defun my/ranger-go (path)
+;;   "Go subroutine"
+;;   (interactive
+;;    (list
+;;     (read-char-choice
+;;         "h   : ~
+;;         c   : ~/.config
+;;         d   : ~/dev
+;;         f   : ~/.dotfiles
+;;         D   : ~/downloads
+;;         o   : ~/org
+;;         p   : ~/pictures
+;;         v   : ~/videos
+;;         m   : ~/music
+;;         s   : ~/.local/src
+;;         S   : ~/.local/share
+;;         b,/ : ~/.local/bin
+;;         M   : /mnt
+;;         r   : /
+;;         > "
+;;      '(?q ?h ?c ?d ?D ?o ?p ?v ?m ?s ?S ?b ?M ?r ?g ?j ?k ?T ?t ?n))))
+;;   (message nil)
+;;   (let* ((c (char-to-string path))
+;;          (new-path
+;;           (cl-case (intern c)
+;;             ('h "~/")
+;;             ('c "~/.config")
+;;             ('d "~/dev")
+;;             ('f "~/.dotfiles")
+;;             ('D "~/downloads")
+;;             ('o "~/org")
+;;             ('p "~/pictures")
+;;             ('v "~/videos")
+;;             ('m "~/music")
+;;             ('s "~/.local/src")
+;;             ('S "~/.local/share")
+;;             ('b "~/.local/bin")
+;;             ('M "/mnt")
+;;             ('r "/")))
+;;          (alt-option
+;;           (cl-case (intern c)
+;;             ;; Subdir Handlng
+;;             ('j 'ranger-next-subdir)
+;;             ('k 'ranger-prev-subdir)
+;;             ;; Tab Handling
+;;             ('n 'ranger-new-tab)
+;;             ('T 'ranger-prev-tab)
+;;             ('t 'ranger-next-tab)
+;;             ('C 'ranger-close-tab)
+;;             ('g 'ranger-goto-top))))
+;;     (when (string-equal c "q")
+;;       (keyboard-quit))
+;;     (when (and new-path (file-directory-p new-path))
+;;       (ranger-find-file new-path))
+;;     (when (eq system-type 'windows-nt)
+;;       (when (string-equal c "D")
+;;         (ranger-show-drives)))
+;;     (when alt-option
+;;       (call-interactively alt-option))))
+
+;; (evil-define-key 'normal ranger-mode-map (kbd "g") 'my/ranger-go)
