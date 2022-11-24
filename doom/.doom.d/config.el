@@ -75,7 +75,7 @@
   (interactive)
   (call-process "wezterm" nil 0 nil))
 
-;; TODO: wall ah h
+;; TODO: Make it run super+shift+return
 (map! :leader :desc "Run wezterm" "t t" #'open-terminal)
 
 
