@@ -77,6 +77,8 @@
 //      "󰕾"
 //    ],
 //
+    "on-scroll-up": "pamixer -d 1",
+    "on-scroll-down": "pamixer -i 1",
     "on-click": "pamixer -t",
     "on-right-click": "wezterm start pulsemixer",
     "tooltip": false
@@ -90,8 +92,8 @@
   "backlight": {
       "interval": 5,
       "format": "󰖨 {percent}%",
-      "on-scroll-up": "light -A 1",
-      "on-scroll-down": "light -U 1"
+      "on-scroll-up": "light -U 1",
+      "on-scroll-down": "light -A 1"
   },
   "idle_inhibitor": {
       "format": "{icon}",
