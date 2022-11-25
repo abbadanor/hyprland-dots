@@ -13,7 +13,17 @@
 
 (setq projectile-enable-caching nil)
 
+;; Move to trash instead of rm:ing
+(setq delete-by-moving-to-trash t)
+
 (run-at-time nil (* 5 60) 'recentf-save-list)
+
+;; Don't ask to delete buffer after deleting file in dired
+(defun my--dired-kill-before-delete (file &rest rest)
+                (when-let ((buf (get-file-buffer file)))
+                  (kill-buffer buf)))
+
+(advice-add 'dired-delete-file :before 'my--dired-kill-before-delete)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -65,10 +75,72 @@
   (interactive)
   (call-process "wezterm" nil 0 nil))
 
-;; TODO: wall ah h
+;; TODO: Make it run super+shift+return
 (map! :leader :desc "Run wezterm" "t t" #'open-terminal)
 
 
 (map! :leader :desc "Comment line" "TAB TAB" #'comment-line)
 
 (evil-define-key '(normal visual visual-line) web-mode-map (kbd "g%") 'web-mode-navigate)
+
+;; (defun my/ranger-go (path)
+;;   "Go subroutine"
+;;   (interactive
+;;    (list
+;;     (read-char-choice
+;;         "h   : ~
+;;         c   : ~/.config
+;;         d   : ~/dev
+;;         f   : ~/.dotfiles
+;;         D   : ~/downloads
+;;         o   : ~/org
+;;         p   : ~/pictures
+;;         v   : ~/videos
+;;         m   : ~/music
+;;         s   : ~/.local/src
+;;         S   : ~/.local/share
+;;         b,/ : ~/.local/bin
+;;         M   : /mnt
+;;         r   : /
+;;         > "
+;;      '(?q ?h ?c ?d ?D ?o ?p ?v ?m ?s ?S ?b ?M ?r ?g ?j ?k ?T ?t ?n))))
+;;   (message nil)
+;;   (let* ((c (char-to-string path))
+;;          (new-path
+;;           (cl-case (intern c)
+;;             ('h "~/")
+;;             ('c "~/.config")
+;;             ('d "~/dev")
+;;             ('f "~/.dotfiles")
+;;             ('D "~/downloads")
+;;             ('o "~/org")
+;;             ('p "~/pictures")
+;;             ('v "~/videos")
+;;             ('m "~/music")
+;;             ('s "~/.local/src")
+;;             ('S "~/.local/share")
+;;             ('b "~/.local/bin")
+;;             ('M "/mnt")
+;;             ('r "/")))
+;;          (alt-option
+;;           (cl-case (intern c)
+;;             ;; Subdir Handlng
+;;             ('j 'ranger-next-subdir)
+;;             ('k 'ranger-prev-subdir)
+;;             ;; Tab Handling
+;;             ('n 'ranger-new-tab)
+;;             ('T 'ranger-prev-tab)
+;;             ('t 'ranger-next-tab)
+;;             ('C 'ranger-close-tab)
+;;             ('g 'ranger-goto-top))))
+;;     (when (string-equal c "q")
+;;       (keyboard-quit))
+;;     (when (and new-path (file-directory-p new-path))
+;;       (ranger-find-file new-path))
+;;     (when (eq system-type 'windows-nt)
+;;       (when (string-equal c "D")
+;;         (ranger-show-drives)))
+;;     (when alt-option
+;;       (call-interactively alt-option))))
+
+;; (evil-define-key 'normal ranger-mode-map (kbd "g") 'my/ranger-go)
