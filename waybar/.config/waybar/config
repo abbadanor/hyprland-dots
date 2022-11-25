@@ -11,9 +11,10 @@
   ],
   "modules-right": [
     "network",
-    "pulseaudio",
+    "wireplumber",
     "battery",
-    "custom/mpd",
+    "backlight",
+    //"custom/mpd",
     "custom/updates",
     "idle_inhibitor",
     "tray",
@@ -43,6 +44,7 @@
   },
   "network": {
       "interface": "wlan*",
+      "on-click": "iwgtk",
       "format": "{ifname}",
       "format-wifi": "{icon} {essid}",
       "format-icons": [
@@ -63,7 +65,7 @@
     "format": "󰝚 {}",
     "format-paused": "󰏥 {}"
   },
-  "pulseaudio": {
+  "wireplumber": {
     "format": "{icon} {volume}%",
     "format-muted": "<span color=\"#4a4a4a\">󰸈</span>",
     "format-icons": [
@@ -75,6 +77,7 @@
       "󰕾"
     ],
     "on-click": "pamixer -t",
+    "on-right-click": "wezterm start pulsemixer",
     "tooltip": false
   },
   "battery": {
@@ -82,6 +85,12 @@
       "format": "{capacity}% {icon}",
       "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "max-length": 25
+  },
+  "backlight": {
+      "interval": 5,
+      "format": "󰖨 {percent}%",
+      "on-scroll-up": "light -A 1",
+      "on-scroll-down": "light -U 1"
   },
   "idle_inhibitor": {
       "format": "{icon}",
