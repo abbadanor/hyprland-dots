@@ -12,9 +12,9 @@
   "modules-right": [
     "network",
     "wireplumber",
-    "battery",
     "backlight",
-    //"custom/mpd",
+    "battery",
+    "custom/mpd",
     "custom/updates",
     "idle_inhibitor",
     "tray",
